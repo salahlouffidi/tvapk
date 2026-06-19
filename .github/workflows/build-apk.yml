@@ -33,7 +33,7 @@ jobs:
           keytool -genkeypair \
             -alias androiddebugkey \
             -keypass android \
-            -keystore debug.keystore \
+            -keystore "${{ github.workspace }}/debug.keystore" \
             -storepass android \
             -dname "CN=Android Debug,O=Android,C=US" \
             -keyalg RSA \
@@ -41,7 +41,7 @@ jobs:
             -validity 10000
 
       - name: Create .env file
-        run: echo "GEMINI_API_KEY=MY_GEMINI_API_KEY" > .env
+        run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY || 'MY_GEMINI_API_KEY' }}" > .env
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
