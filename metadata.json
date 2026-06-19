@@ -1,0 +1,6 @@
+{
+  "name": "E TV",
+  "description": "An elegant, premium Android container and viewer for the E TV web application.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
